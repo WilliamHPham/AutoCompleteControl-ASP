@@ -16,7 +16,7 @@ public partial class PageMethod : System.Web.UI.Page
 
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
-    public static List<string> SearchUser(string prefixText)
+    public static List<string> GetMovie(string prefixText)
     {
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Movies.accdb;Persist Security Info=True");
         OleDbCommand cmd = new OleDbCommand("SELECT Name FROM Movies Where Name LIKE'" + prefixText + "%'", con);

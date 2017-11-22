@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Animation Control"></asp:Label>
     <br />
-    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="#90949C" Font-Bold="true" Text="@Using the Animation Control"></asp:Label>
+    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="White" Font-Bold="True" Text="@Using the Animation Control"></asp:Label>
     
     <hr />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>

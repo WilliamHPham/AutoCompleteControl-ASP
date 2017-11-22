@@ -11,4 +11,9 @@ public partial class MaskedEdit : System.Web.UI.Page
     {
 
     }
+
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        lbShow.Text = "Movie Name: " + txtName.Text + " - Date Realsed: " + txtDateReleased.Text;
+    }
 }

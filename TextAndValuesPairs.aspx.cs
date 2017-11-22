@@ -11,41 +11,54 @@ using System.Configuration;
 
 public partial class Css_TextAndValuesPairs : System.Web.UI.Page
 {
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
-    public string[] GetMovie(string prefixText, int count)
+    public static List<string> GetMovie(string prefixText)
     {
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Movies.accdb;Persist Security Info=True");
-        OleDbCommand cmd = new OleDbCommand("SELECT ID, Name FROM Movies WHERE Name LIKE @Name", con);
-        cmd.Parameters.AddWithValue("@Name", prefixText + "%");
+        OleDbCommand cmd = new OleDbCommand("SELECT Name FROM Movies Where Name LIKE'" + prefixText + "%'", con);
         OleDbDataReader reader;
-        List<string> resultList = new List<string>();
-        string resultItem = string.Empty;
+        List<string> result = new List<string>();
         using (con)
         {
             con.Open();
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                resultItem = AjaxControlToolkit.AutoCompleteExtender.CreateAutoCompleteItem(reader[0].ToString(), reader[1].ToString());
-                resultList.Add(resultItem);
+                result.Add(reader["Name"].ToString());
+                string item = AjaxControlToolkit.AutoCompleteExtender.CreateAutoCompleteItem(reader["Name"].ToString(), Convert.ToUInt32(reader["ID"]).ToString());
+                result.Add(item);
             }
-            return resultList.ToArray();
+            return result;
         }
-    }
-
-    public OleDbDataReader getID(int mID)
-    {
-        OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Movies.accdb;Persist Security Info=True");
-        OleDbCommand cmd = new OleDbCommand("SELECT ID, Name FROM Movies WHERE ID LIKE @ID", conn);
-        cmd.Parameters.AddWithValue("@ID", mID);
-        conn.Open();
-        return cmd.ExecuteReader(CommandBehavior.CloseConnection);
     }
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        GridView1.DataSource = getID(Convert.ToInt32(hdMovieID.Value));
-        GridView1.DataBind();
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Movies.accdb;Persist Security Info=True");
+        OleDbCommand cmd = new OleDbCommand("SELECT * FROM Movies Where Name='" + TextBox1.Text + "'", con);
+        DataTable dtb = new DataTable();
+        dtb.Columns.Add("Name");
+        dtb.Columns.Add("Producer");
+        OleDbDataReader reader;
+        using (con)
+        {
+            con.Open();
+            reader = cmd.ExecuteReader();
+            DataRow row;
+            while (reader.Read())
+            {
+                row = dtb.NewRow();
+                row["Name"] = (string)reader["Name"];
+                row["Producer"] = (string)reader["Producer"];
+                dtb.Rows.Add(row);
+            }
+            GridView1.DataSource = dtb;
+            GridView1.DataBind();
+        }
     }
 }

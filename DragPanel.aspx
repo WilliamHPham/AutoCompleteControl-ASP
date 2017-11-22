@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="DragPanel Control"></asp:Label>
     <br />
-    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="#90949C" Font-Bold="true" Text="@Using the DragPanel Control"></asp:Label>
+    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="White" Font-Bold="True" Text="@Using the DragPanel Control"></asp:Label>
 
     <hr />
 
@@ -36,7 +36,7 @@
         }
     </style>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <p> You can drag the following panel area at any where on the form. </p>
+    <b> You can drag the following panel area at any where on the form. </b>
         <ajaxToolkit:DragPanelExtender ID="DragPanelExtender1" runat="server" TargetControlID="pnlCover"
             DragHandleID="pnlAdd"></ajaxToolkit:DragPanelExtender>
     

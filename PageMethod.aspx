@@ -7,33 +7,32 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="AutoCompleteExtender with a Page Method" BorderStyle="None"></asp:Label>
     <br />
-    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="#90949C" Font-Bold="True" Text="@Using the AutoCompleteExtender with a Page Method" BorderStyle="None"></asp:Label>
+    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="#ffffff" Font-Bold="True" Text="@Using the AutoCompleteExtender with a Page Method" BorderStyle="None"></asp:Label>
 
     <hr />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <asp:Label ID="Label3" runat="server" Text="Movie Name:" Font-Bold="True" Font-Size="Medium" Height="20px"></asp:Label>
+    <asp:Label ID="Label3" runat="server" Text="Movie Name:" Font-Bold="True" Font-Size="Medium" Height="20px" BorderStyle="None"></asp:Label>
     <asp:TextBox
         ID="TextBox1"
         runat="server"
         Height="20px"
-        Width="300px">
-    </asp:TextBox>
+        Width="300px" BorderStyle="None"></asp:TextBox>
     <ajaxToolkit:AutoCompleteExtender
         ID="TextBox1_AutoCompleteExtender"
         runat="server"
         BehaviorID="TextBox1_AutoCompleteExtender"
         DelimiterCharacters=""
-        ServiceMethod="SearchUser"
+        ServiceMethod="GetMovie"
         TargetControlID="TextBox1"
         CompletionInterval="100"
         CompletionSetCount="10"
         MinimumPrefixLength="1">
     </ajaxToolkit:AutoCompleteExtender>
-    
+
     <asp:Button ID="Button1" runat="server" Text="Find" BackColor="#4267B2" BorderStyle="None" Font-Size="Medium" ForeColor="White" Height="20px" OnClick="Button1_Click" />
-        
-    <asp:Button ID="Button2" runat="server" Text="?" BackColor="#4267B2" BorderStyle="None" Font-Size="Medium" ForeColor="White" Height="20px" Width="20px"/>
-    
+
+    <asp:Button ID="Button2" runat="server" Text="?" BackColor="#4267B2" BorderStyle="None" Font-Size="Medium" ForeColor="White" Height="20px" Width="20px" />
+
     <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
         <EditRowStyle BackColor="#2461BF" />

@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="AutoCompleteExtender with a Web Service Method"></asp:Label>
     <br />
-    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="#90949C" Font-Bold="true" Text="@Using the AutoCompleteExtender with a Web Service Method"></asp:Label>
+    <asp:Label ID="Label2" runat="server" Font-Size="Small" ForeColor="White" Font-Bold="True" Text="@Using the AutoCompleteExtender with a Web Service Method"></asp:Label>
 
     <hr />
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -15,12 +15,12 @@
                 <asp:ServiceReference Path="~/WebService.asmx" />
             </Services>
     </asp:ScriptManager>
-    <asp:Label ID="Label3" runat="server" Text="Movie Name:" Font-Bold="True" Font-Size="Medium" Height="20px"></asp:Label>
+    <asp:Label ID="Label3" runat="server" Text="Movie Name:" Font-Bold="True" Font-Size="Medium" Height="20px" BorderStyle="None"></asp:Label>
     <asp:TextBox
         ID="TextBox1"
         runat="server"
         Height="20px"
-        Width="300px"></asp:TextBox>
+        Width="300px" BorderStyle="None"></asp:TextBox>
     <ajaxToolkit:AutoCompleteExtender
         ID="TextBox1_AutoCompleteExtender"
         runat="server"
@@ -35,7 +35,7 @@
         CompletionSetCount="10"
         MinimumPrefixLength="1">
     </ajaxToolkit:AutoCompleteExtender>
-    <asp:Button ID="Button1" runat="server" Text="Find" BackColor="#4267B2" BorderStyle="None" Font-Size="Medium" ForeColor="White" Height="20px" OnClick="Button1_Click" />
+    <asp:Button ID="Button1" runat="server" Text="Find" BackColor="#4267B2" BorderStyle="None" Font-Size="Medium" ForeColor="White" Height="20px" OnClick="Button1_Click" Width="42px" />
     
 <br />
 <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
