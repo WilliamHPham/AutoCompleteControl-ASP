@@ -51,7 +51,7 @@
     </asp:Panel>
     
     <hr />
-    <asp:Panel ID="pnl2" runat="server" Width="500px" Height="500px" BackImageUrl="~/images/image.jpg">
+    <asp:Panel ID="pnl2" runat="server" Width="300px" Height="200px" BackImageUrl="~/images/image_1.jpg">
         <ajaxToolkit:AnimationExtender ID="pnl2_Animationextender" runat="server" TargetControlID="pnl2">
             <Animations>
                 <OnMouseOver> 

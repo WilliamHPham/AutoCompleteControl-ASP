@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <div id="content_master">
             <div id="top">
-                <asp:Label ID="Label1" runat="server" Text="Label">LẬP TRÌNH WEB</asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="ASP.NET"></asp:Label>
             </div>
             <div id="left_content">
                 <h3>...</h3>
@@ -59,7 +59,7 @@
                     </h3>
                 </asp:Panel>
             </div>
-            <div id="content_placeholder" style="background-image: url('/images/content.jpg')">
+            <div id="content_placeholder" style="background-image: url('/images/content_1.jpg')">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

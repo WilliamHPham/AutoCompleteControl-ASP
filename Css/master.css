@@ -8,14 +8,14 @@
 {
     width:1300px;
     margin:0px auto;
-    height:760px;
+    height:auto;
 }
 
 #content_placeholder
 {
-    width:920px;
-    height:760px;
-    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
+    width:940px;
+    height:600px;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 1.5);
     margin-top:10px;
     padding-left:10px;
     color:#000;
@@ -24,11 +24,11 @@
 
 #top
 {
-    padding-top:10px;
+    padding-top:5px;
     text-align:center;
-    background-color: #4267B2; 
+    background-image:url(/images/top_1.jpg);
     width:1300px; 
-    height:45px;
+    height:35px;
     color:#fff;
     font-size:xx-large;
 }
@@ -45,10 +45,11 @@
 #left_content
 {
     margin-top:10px;
-    height:760px;
-    width:340px;
+    height:600px;
+    width:330px;
     background-image:url(/images/content_left.jpg);
     float :left;
     padding-left:10px;
+    color:#fff;
 }
 

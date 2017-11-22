@@ -6,7 +6,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script type="text/javascript">
-
         function ace1_itemSelected(sender, e) {
             var ace1Value = $get('<%= ace1Value.ClientID %>');
             ace1Value.value = e.get_value();
@@ -27,21 +26,27 @@
                 ID="TextBox1"
                 runat="server"
                 Height="20px"
-                Width="300px" BorderStyle="None" a></asp:TextBox>
+                Width="300px" BorderStyle="None"></asp:TextBox>
             <ajaxToolkit:AutoCompleteExtender
                 ID="TextBox1_AutoCompleteExtender"
                 runat="server"
                 ServiceMethod="GetMovie"
                 TargetControlID="TextBox1"
-                MinimumPrefixLength="1" 
-                OnClientItemSelected="ace1_itemSelected" 
+                MinimumPrefixLength="1"
+                OnClientItemSelected="ace1_itemSelected"
                 FirstRowSelected="true">
             </ajaxToolkit:AutoCompleteExtender>
+            <asp:Button ID="Button1" runat="server" Text="Find" BackColor="#4267B2" BorderStyle="None" Font-Size="Medium" ForeColor="White" Height="20px" OnClick="Button1_Click" />
             <asp:HiddenField
                 ID="ace1Value"
                 runat="server" />
-            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
-
+            <hr />
+            <br />
+            <asp:Label ID="Label4" runat="server" Text="Name: " Font-Bold="true" />
+            <asp:Label ID="lblSelectedName" runat="server" />
+            <br />
+            <asp:Label ID="Label5" runat="server" Text="Primary Key: " Font-Bold="true" />
+            <asp:Label ID="lblSelectedNameId" runat="server" />
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
